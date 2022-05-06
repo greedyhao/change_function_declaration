@@ -67,6 +67,8 @@ output = []
 for line in text_lines:
     if len(line) < 3:
         continue
+    if line.startswith("//"):
+        continue # skip comments
     output.append(chg_func_do(line))
 
 print(output)
